@@ -1,0 +1,41 @@
+{% extends 'Base.html'%}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color: aliceblue;">
+            {{ form.hidden_tag() }} <!-- required field for generating csharp -->
+            <h1 class="h3 mb-3 font-weight-normal">
+                Login Account
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control",placeholder='User Name') }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-m btn-block btn-primary") }}
+
+            <br>
+
+            <div class="Checkbox mb-3">
+                <h6>Do not have an account?</h6>
+                <a class="btn bnt-sm btn-secondary" href="{{ url_for('register_page') }}">Register page</a>
+
+            </div>
+
+            
+
+        </form>
+    </div>
+    
+</body>
+    
+{% endblock %}
